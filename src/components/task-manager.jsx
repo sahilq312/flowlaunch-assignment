@@ -15,9 +15,13 @@ const TaskManager = () => {
     }
   
     return (
-      <div>
-        {tasks.map((task) => (
-          <div key={task.id}>
+      <div className="flex flex-col gap-4">
+        {tasks.map((task, index) => (
+          <div
+           key={task.id} 
+          className="flex flex-col gap-2 p-4 border border-gray-300 rounded-md" 
+          >
+            <p>{index + 1}</p>
             <h3 style={{textDecoration: task.status === 'Done' ? 'line-through' : 'none'}}>{task.title}</h3>
             <p>{task.description}</p>
             <p>Status: {task.status}</p>

@@ -18,7 +18,7 @@ const App = () => {
   }, [setTasks]);
 
   return (
-    <div>
+    <div className='bg-gray-300 min-h-screen'>
       <Header />
       <TaskManager />
     </div>
