@@ -4,6 +4,8 @@ import { useEffect } from 'react';
 import TaskManager from './components/task-manager';
 import useTaskStore from './store/store';
 import Header from './components/header';
+import TaskProgress from './components/progress';
+import { Toaster } from 'sonner';
 
 const App = () => {
   const { setTasks } = useTaskStore();
@@ -18,9 +20,11 @@ const App = () => {
   }, [setTasks]);
 
   return (
-    <div className='bg-gray-300 min-h-screen'>
+    <div className=''>
+      <TaskProgress />
       <Header />
       <TaskManager />
+      <Toaster />
     </div>
   )
 }
