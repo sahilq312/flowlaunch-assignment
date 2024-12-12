@@ -9,17 +9,9 @@ const TaskProgress = () => {
   const progressPercentage = Math.round((completedTasks / totalTasks) * 100);
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Task Progress</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p>
-          {completedTasks}/{totalTasks} tasks completed
-        </p>
+    <>
         <Progress value={progressPercentage} className="w-full" />
-      </CardContent>
-    </Card>
+    </>
   );
 };
 

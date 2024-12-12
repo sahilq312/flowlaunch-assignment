@@ -18,3 +18,133 @@
 }
   */
 
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9fafb;
+    color: #333;
+  }
+  
+  /* Task Table Container */
+  .tabulator-modern {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 0.875rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header Styling */
+  .tabulator-header {
+    background-color: #f3f4f6;
+    color: #4b5563;
+    font-weight: 600;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .tabulator-col {
+    text-align: left;
+    padding: 0.75rem;
+  }
+  
+  .tabulator-sortable .tabulator-arrow {
+    color: #9ca3af;
+  }
+  
+  .tabulator-sortable:hover {
+    background-color: #f9fafb;
+  }
+  
+  /* Row Styling */
+  .tabulator-row {
+    transition: background-color 0.2s;
+  }
+  
+  .tabulator-row-odd {
+    background-color: #f9fafb;
+  }
+  
+  .tabulator-row-even {
+    background-color: #ffffff;
+  }
+  
+  .tabulator-row:hover {
+    background-color: #eef2ff;
+  }
+  
+  .tabulator-selected {
+    background-color: #dbeafe !important;
+  }
+  
+  /* Cells */
+  .tabulator-cell {
+    padding: 0.75rem;
+    border-right: 1px solid #e5e7eb;
+  }
+  
+  .tabulator-cell:last-child {
+    border-right: none;
+  }
+  
+  /* Status Badges */
+  .bg-green-100 {
+    background-color: #d1fae5;
+  }
+  
+  .text-green-700 {
+    color: #047857;
+  }
+  
+  .bg-yellow-100 {
+    background-color: #fef3c7;
+  }
+  
+  .text-yellow-700 {
+    color: #b45309;
+  }
+  
+  /* Action Button */
+  button {
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+  }
+  
+  button:hover {
+    transform: translateY(-1px);
+  }
+  
+  button:active {
+    transform: translateY(0);
+  }
+  
+  /* Pagination Styling */
+  .tabulator-footer {
+    background-color: #f3f4f6;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e5e7eb;
+  }
+  
+  .tabulator-paginator button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #3b82f6;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .tabulator-paginator button:hover {
+    background-color: #2563eb;
+  }
+  
+  .tabulator-paginator button:disabled {
+    background-color: #e5e7eb;
+    color: #9ca3af;
+    cursor: not-allowed;
+  }
+  
