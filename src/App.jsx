@@ -1,4 +1,4 @@
-//import './App.css'
+import './App.css'
 import { fetchTasks } from './utils/api';
 import { useEffect } from 'react';
 //import TaskManager from './components/task-manager';

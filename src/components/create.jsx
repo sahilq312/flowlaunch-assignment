@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import { useState } from 'react';
 import useTaskStore from '../store/store';
 
 const CreateTaskForm = () => {
@@ -27,7 +26,7 @@ const CreateTaskForm = () => {
       description,
       status,
     };
-    
+
       addTask(newTask);
       setTasks((prevTasks) => [...prevTasks, { ...newTask, ...data }]);
       setTitle('');

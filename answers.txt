@@ -1,0 +1,64 @@
+1. How did you handle inline editing in the table? 
+
+- Inline editing in the table was handled using the editor property in the column definition of the React Tabulator. For example:
+The editor: "input" configuration in the title and description columns allows users to directly modify the values.
+The editor: "list" configuration in the status column allows users to select from predefined values ("To do" or "Done").
+ When a cell value changes, the state is updated in the updateTask or updateStatus method of the Zustand store.
+
+2. Explain how you fetched and processed the data from the dummy API. 
+
+- A GET request was sent to the endpoint https://jsonplaceholder.typicode.com/todos?_limit=20 to retrieve 20 tasks.
+The response data was mapped into the required format:
+The id and title were directly extracted from the API response.
+The description field was left empty since the dummy API does not provide it.
+The status was determined based on the completed property from the API response, mapping true to "Done" and false to "To Do."
+The formatted data was returned to populate the task list
+
+
+
+3. What approach did you use to filter tasks based on status? 
+
+- Tasks were filtered based on the status field using the filter method.
+  For instance, if filtering tasks by status was required, a simple function like this would be used:
+
+  const filteredTasks = tasks.filter((task) => task.status === selectedStatus);
+
+ Also , for search functionality, the searchQuery state was used to filter tasks based on their title. 
+ The filtering logic checks if the task's title includes the search query in a case-insensitive manner:
+
+ const filteredTasks = tasks.filter((task) =>
+  task.title.toLowerCase().includes(searchQuery)
+);
+
+
+
+4. How did you manage the state of tasks when adding or editing them? 
+
+- The state of tasks was managed using the Zustand store. Key points:
+
+ Adding Tasks:
+ A new task was added by calling the addTask method, which appends the task to the existing tasks array in the store.
+ Editing Tasks:
+ Inline edits update the store through methods like updateTask or updateStatus.
+ For updateStatus, the specific task is identified by its id and updated using map to ensure immutability:
+
+ updateStatus: (taskId, newStatus) =>
+  set((state) => ({
+    tasks: state.tasks.map((task) =>
+      task.id === taskId ? { ...task, status: newStatus } : task
+    ),
+  }));
+
+
+
+5. What challenges did you face during development, and how did you overcome them? 
+ 
+-Here are some challenges faced and solutions:
+
+Challenge 1: Integrating Zustand with React Tabulator
+ React Tabulator requires manual state updates to ensure table data reflects changes in the Zustand store.
+ This was resolved by explicitly calling the necessary state update functions (e.g., updateStatus) on cell edits.
+
+Challenge 2: Maintaining unique IDs for tasks when deleting
+  Deleting a task initially caused gaps in the task IDs. To address this, 
+  the deleteTask method was enhanced to reassign IDs sequentially to the remaining tasks after a deletion.
