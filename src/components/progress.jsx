@@ -1,5 +1,4 @@
 import useTaskStore from "../store/store";
-import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
 import { Progress } from "./ui/progress";
 
 const TaskProgress = () => {
@@ -10,7 +9,7 @@ const TaskProgress = () => {
 
   return (
     <>
-        <Progress value={progressPercentage} className="w-full" />
+        <Progress value={progressPercentage} className="w-1/2 " />
     </>
   );
 };

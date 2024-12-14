@@ -53,12 +53,12 @@
   }
   
   .tabulator-sortable:hover {
-    background-color: #f9fafb;
+    background-color: #212121;
   }
   
   /* Row Styling */
   .tabulator-row {
-    transition: background-color 0.2s;
+    transition: background-color 0.3s;
   }
   
   .tabulator-row-odd {
@@ -104,7 +104,6 @@
     color: #b45309;
   }
   
-  /* Action Button */
   button {
     cursor: pointer;
     transition: background-color 0.2s, transform 0.2s;

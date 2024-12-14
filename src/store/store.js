@@ -10,14 +10,19 @@ const useTaskStore = create((set) => ({
         task.id === updatedTask.id ? updatedTask : task
       ),
     })),
+  updateStatus: (taskId, newStatus) =>
+    set((state) => ({
+      tasks: state.tasks.map((task) =>
+        task.id === taskId ? {...task, status: newStatus} : task
+      ),
+    })),
   deleteTask: (taskId) =>
     set((state) => {
       const filteredTasks = state.tasks.filter((task) => task.id !== taskId);
 
-      // Reassign sequential IDs after deletion
       const updatedTasks = filteredTasks.map((task, index) => ({
         ...task,
-        id: index + 1, // Reassign `id` based on new index
+        id: index + 1,
       }));
 
       return { tasks: updatedTasks };
